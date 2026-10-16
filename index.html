@@ -1,308 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Alejandra Kovač — Arte Textil</title>
-<meta name="description" content="Alejandra Kovač, artista textil. Obra inspirada en los paisajes de La Rioja, trabajada en lana y fieltro húmedo.">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alejandra Kovač · Arte textil contemporáneo</title>
+<meta name="description" content="Alejandra Kovač, artista textil de La Rioja, Argentina. Obras en fieltro húmedo de lana: colección Mi Tierra, proyectos para espacios y exposiciones.">
+<meta name="author" content="Alejandra Kovač">
+<meta name="theme-color" content="#0E0C0A">
+<meta property="og:title" content="Alejandra Kovač · Arte textil contemporáneo">
+<meta property="og:description" content="Obras en fieltro húmedo de lana. Colección Mi Tierra, proyectos para espacios y exposiciones.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171411'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23BFA98D'%3EAK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg: #0c0c0c;
-    --bg-section: #121212;
-    --ink: #f5f5f3;
-    --ink-soft: #c9c9c6;
-    --ink-faint: #8a8a86;
-    --line: rgba(245,245,243,0.28);
-    --line-soft: rgba(245,245,243,0.14);
-  }
-
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-
-  html{
-    -webkit-text-size-adjust:100%;
-  }
-
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Montserrat', sans-serif;
-    font-weight:300;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    overflow-x:hidden;
-  }
-
-  a{ color:inherit; text-decoration:none; }
-
-  img{ display:block; max-width:100%; }
-
-  /* ---------- PORTADA ---------- */
-
-  .hero{
-    position:relative;
-    width:100%;
-    /* Alto pensado como una franja editorial, no pantalla completa,
-       para que en escritorio no se vea desproporcionado */
-    height:100svh;
-    min-height:560px;
-    max-height:920px;
-    overflow:hidden;
-    background:linear-gradient(180deg, #cebca6 0%, #937556 50%, #40352b 100%);
-  }
-
-  .hero__caption{
-    position:absolute;
-    right:6.5%;
-    bottom:9%;
-    z-index:2;
-    text-align:right;
-    max-width:80%;
-  }
-
-  .hero__name{
-    font-weight:300;
-    font-size:clamp(1.9rem, 5vw, 3.2rem);
-    letter-spacing:0.18em;
-    line-height:1.25;
-    text-transform:uppercase;
-    color:var(--ink);
-  }
-
-  .hero__discipline{
-    margin-top:0.9em;
-    font-weight:400;
-    font-size:clamp(0.62rem, 1.1vw, 0.78rem);
-    letter-spacing:0.32em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-
-  /* ---------- STATEMENT ---------- */
-
-  .statement{
-    background:var(--bg);
-    border-top:1px solid var(--line-soft);
-    padding:6.5rem 1.6rem;
-    display:flex;
-    justify-content:center;
-  }
-
-  .statement__inner{
-    max-width:620px;
-    width:100%;
-  }
-
-  .statement p{
-    font-weight:300;
-    font-size:0.98rem;
-    line-height:1.95;
-    color:var(--ink-soft);
-    letter-spacing:0.01em;
-  }
-
-  .statement p + p{
-    margin-top:1.6em;
-  }
-
-  /* ---------- SECCION FINAL ---------- */
-
-  .closing{
-    background:var(--bg);
-    padding:6rem 1.6rem 7rem;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    border-top:1px solid var(--line-soft);
-  }
-
-  .closing__title{
-    font-weight:400;
-    font-size:0.78rem;
-    letter-spacing:0.28em;
-    text-transform:uppercase;
-    color:var(--ink);
-    margin-bottom:3rem;
-  }
-
-  .closing__buttons{
-    display:flex;
-    gap:1.1rem;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .btn{
-    display:inline-block;
-    padding:0.95em 2.1em;
-    font-family:'Montserrat', sans-serif;
-    font-weight:400;
-    font-size:0.72rem;
-    letter-spacing:0.24em;
-    text-transform:uppercase;
-    color:var(--ink);
-    background:transparent;
-    border:1px solid var(--line);
-    border-radius:2px;
-    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-    white-space:nowrap;
-  }
-
-  .btn:hover,
-  .btn:focus-visible{
-    background:var(--ink);
-    color:#0c0c0c;
-    border-color:var(--ink);
-  }
-
-  .btn:focus-visible{
-    outline:2px solid var(--ink-faint);
-    outline-offset:3px;
-  }
-
-  /* ---------- FOOTER discreto ---------- */
-
-  .footer{
-    background:var(--bg);
-    text-align:center;
-    padding:0 1.6rem 2.6rem;
-  }
-
-  .footer span{
-    font-size:0.62rem;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
-  }
-
-  /* ---------- RESPONSIVE: MOBILE FIRST ADJUSTMENTS ---------- */
-
-  @media (max-width: 640px){
-    .hero{
-      height:78svh;
-      min-height:460px;
-    }
-
-    .hero__caption{
-      right:6%;
-      bottom:7.5%;
-      max-width:88%;
-    }
-
-    .hero__name{
-      font-size:1.6rem;
-      letter-spacing:0.14em;
-    }
-
-    .hero__discipline{
-      font-size:0.6rem;
-      letter-spacing:0.26em;
-      margin-top:0.75em;
-    }
-
-    .statement{
-      padding:4.5rem 1.4rem;
-    }
-
-    .statement p{
-      font-size:0.92rem;
-      line-height:1.85;
-    }
-
-    .closing{
-      padding:4.5rem 1.4rem 5.5rem;
-    }
-
-    .closing__title{
-      font-size:0.7rem;
-      margin-bottom:2.4rem;
-    }
-
-    .closing__buttons{
-      flex-direction:column;
-      width:100%;
-      gap:0.9rem;
-    }
-
-    .btn{
-      width:100%;
-      text-align:center;
-      padding:1.05em 1.6em;
-    }
-  }
-
-  @media (min-width: 641px) and (max-width: 1024px){
-    .hero__caption{
-      right:7%;
-      bottom:8%;
-    }
-  }
-
-  @media (min-width: 1400px){
-    .hero{
-      max-height:880px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .btn{ transition:none; }
-  }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+<header class="nav" lang="es">
+  <div class="wrap">
+    <a class="marca" href="#sobre">Alejandra Kovač</a>
+    <nav class="enlaces" id="enlaces" aria-label="Secciones">
+      <a href="#sobre">Sobre Alejandra</a>
+      <a href="#proceso">El Fieltro: Historia y Proceso</a>
+      <a href="#mi-tierra">Mi Tierra</a>
+      <a href="#obras">Obras</a>
+      <a href="#trayectoria">Trayectoria y Exposiciones</a>
+      <a href="#contacto" class="solo-menu">Contacto</a>
+    </nav>
+    <a class="boton" href="#contacto">Contacto</a>
+    <button class="menu-boton" id="menu-boton" type="button" aria-expanded="false" aria-controls="enlaces">menú</button>
+  </div>
+</header>
 
-  <!-- ================= PORTADA ================= -->
-  <header class="hero">
-    <div class="hero__caption">
-      <div class="hero__name">Alejandra<br>Kovač</div>
-      <div class="hero__discipline">Arte Textil</div>
-    </div>
-  </header>
+<!--
+  CÓMO CARGAR FOTOS
+  Cada espacio de foto es un <figure class="slot" data-ref="...">. Vacío, se ve como "foto pendiente"
+  solo en modo edición y desaparece en la versión pública. Para cargar una foto:
+  <figure class="slot" data-ref="..."><img src="foto.jpg" alt="Descripción" data-ampliar></figure>
+  (data-ampliar habilita el zoom al hacer clic).
+-->
 
-  <!-- ================= STATEMENT ================= -->
-  <section class="statement">
-    <div class="statement__inner">
-      <p>Mi obra nace del encuentro entre técnicas ancestrales y una mirada contemporánea. Creo piezas inspiradas en los paisajes de mi infancia en La Rioja, que reconstruyo a través de la memoria.</p>
-
-      <p>Trabajo principalmente con lana y fieltro húmedo: el agua, el jabón y el movimiento de las manos entrelazan las fibras y dan origen a superficies donde la textura, el volumen y la calidez ocupan un lugar central. Me interesa, sobre todo, su dimensión táctil y la atracción sensorial, que despiertan un vínculo entre la obra y quien la contempla.</p>
-
-      <p>En la serie Mi Tierra, el paisaje no aparece como representación literal, sino como una construcción sensible que reinterpreta aquello que conservo de esos lugares.</p>
+<main lang="es">
+  <!-- ═══ 02 · SOBRE ALEJANDRA ═══ -->
+  <section id="sobre" class="seccion">
+    <div class="wrap">
+      <div class="cabecera revelar">
+        <h2 class="titulo"><span class="linea">Sobre</span><span class="linea script">Alejandra</span></h2>
+      </div>
+      <div class="tarjeta sobre revelar">
+        <div class="prosa">
+          <p class="destacado">Alejandra Kovač nació en La Rioja, Argentina. Su obra reúne técnicas textiles ancestrales.</p>
+          <p>Trabaja con fieltro, tejido y bordado, y construye composiciones de texturas y relieves que surgen del trabajo manual.</p>
+          <p>Su mirada nace de los paisajes de su tierra natal, un vínculo que atraviesa toda su producción. En cada obra, la materia se vuelve un lenguaje para explorar la relación entre el lugar de origen, los recuerdos y las emociones.</p>
+        </div>
+        <figure class="retrato">
+          <div class="slot foto" data-ref="Retrato"><img src="img/retrato-alejandra.jpg" alt="Retrato de Alejandra Kovač junto a una de sus obras textiles"></div>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <!-- ================= SECCION FINAL ================= -->
-  <section class="closing">
-    <div class="closing__title">Conocé más sobre mi obra</div>
+  <!-- ═══ 03 · EL FIELTRO Y EL PROCESO ═══ -->
+  <section id="proceso" class="seccion">
+    <div class="wrap">
+      <div class="cabecera revelar">
+        <h2 class="titulo"><span class="linea">El Fieltro:</span><span class="linea">Historia <span class="script">y</span> Proceso</span></h2>
+      </div>
 
-    <div class="closing__buttons">
-      <a
-        class="btn"
-        href="https://kovacestudiob097.myportfolio.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Catálogo</a>
+      <!-- Breve historia del fieltro -->
+      <div class="historia revelar" id="historia-fieltro">
+        <div class="subcabecera">
+          <h3 class="subtitulo" style="max-width: 22ch">La historia del fieltro</h3>
+        </div>
+        <div class="tarjeta hist" id="hist">
+          <ol class="hist-linea">
+            <span class="hist-barra" aria-hidden="true"><span class="hist-relleno" id="hist-relleno"></span></span>
+            <li><button type="button" class="hist-paso" data-i="0" aria-label="01 — Los orígenes"><span class="hist-num">01</span><span class="hist-nombre">Los orígenes</span></button></li>
+            <li><button type="button" class="hist-paso" data-i="1" aria-label="02 — Asia Central"><span class="hist-num">02</span><span class="hist-nombre">Asia Central</span></button></li>
+          </ol>
+          <div class="hist-caps">
+          <article class="hist-cap" data-i="0" >
+            <div class="hist-dibujo"><svg viewBox="0 0 400 300" aria-hidden="true"><g class="trazo">
+  <path d="M20 230 L95 120 L130 165 L190 70 L250 160 L285 120 L380 230"/>
+  <path d="M150 130 L190 70 L215 108" class="fino"/>
+  <path d="M20 250 H380" class="fino"/>
+  <path d="M20 250 Q110 205 200 228 T380 214" class="fino"/>
+</g>
+<text x="200" y="285" class="rotulo">Pazyryk · montes Altái · s. V a. C.</text></svg></div>
+            <div class="hist-texto">
+              <p class="hito-fecha">01 — Los orígenes</p>
+              <h4>Una de las expresiones textiles más antiguas</h4>
+              <p>El fieltro es una de las técnicas textiles más antiguas. Aunque su origen exacto es incierto, su uso se remonta a la Antigüedad. Entre los testimonios arqueológicos más destacados se encuentran las piezas halladas en Pazyryk, en los montes Altái, en Asia Central, fechadas aproximadamente en el siglo V&nbsp;a.&nbsp;C.</p>
+            </div>
+          </article>
+          <article class="hist-cap" data-i="1" hidden>
+            <div class="hist-fotos">
+              <figure class="foto"><img src="img/historia-nomadas-1.jpg" alt="Pastores nómadas de Asia Central enrollando paños de fieltro sobre la estepa" data-ampliar></figure>
+              <figure class="foto"><img src="img/historia-nomadas-2.jpg" alt="Fotografía antigua de mujeres nómadas trabajando la lana para hacer fieltro" data-ampliar></figure>
+            </div>
+            <div class="hist-texto">
+              <p class="hito-fecha">02 — Asia Central</p>
+              <h4>El fieltro en la vida nómada</h4>
+              <p>Durante siglos, los pueblos nómadas de Asia Central utilizaron el fieltro para cubrir sus viviendas, confeccionar alfombras, mantas y objetos cotidianos. Sus propiedades aislantes y su resistencia lo convirtieron en un material esencial para la vida en territorios de condiciones climáticas extremas.</p>
+              <p>Más allá de su función práctica, el fieltro adquirió un profundo valor cultural. Su elaboración artesanal, transmitida de generación en generación, conserva hasta hoy una estrecha relación entre la materia, el territorio y las comunidades que mantienen viva esta tradición.</p>
+            </div>
+          </article>
+          </div>
+          <div class="hist-ctrl">
+            <button type="button" id="hist-ant" aria-label="Capítulo anterior">←</button>
+            <span id="hist-cuenta" aria-live="polite">01 / 02</span>
+            <button type="button" id="hist-sig" aria-label="Capítulo siguiente">→</button>
+          </div>
+        </div>
+      </div>
 
-      <a
-        class="btn"
-        href="https://www.instagram.com/alekovac/?hl=en"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Instagram</a>
+      <!-- De la fibra a la forma: experiencia interactiva -->
+      <div class="tarjeta lana-banda revelar" id="de-la-lana">
+        <div class="lana">
+          <div class="lana-cab">
+            <p class="etiqueta">Fieltro húmedo</p>
+            <h3 class="subtitulo">De la fibra a la forma</h3>
+            <p class="lana-intro">El fieltro nace de una transformación. La lana natural, en contacto con el agua, el jabón y el movimiento de las manos, comienza a entrelazar sus fibras hasta convertirse en una nueva superficie textil. Un proceso ancestral donde la materia adquiere forma a través del tiempo y el trabajo manual.</p>
+          </div>
+          <div class="lana-cuerpo">
+            <div class="lana-escena">
+              <canvas id="lana-canvas" aria-label="Composición de fibras de lana que se transforma en fieltro" role="img"></canvas>
+              <span class="lana-flotante" id="lana-flotante" aria-hidden="true">Lana natural</span>
+              <p class="lana-pista" id="lana-pista" aria-hidden="true"><span class="lana-pista-punto"></span><span id="lana-pista-texto">Hacé clic para ver el proceso</span></p>
+              <p class="lana-pregunta" id="lana-pregunta" aria-live="polite"><span style="--i:0">¿Sabías</span> <span style="--i:1">que</span> <span style="--i:2">el</span> <span style="--i:3">fieltro</span> <span style="--i:4">es</span> <span style="--i:5">una</span> <span style="--i:6">tela</span> <span style="--i:7">no</span> <span style="--i:8">tejida?</span></p>
+            </div>
+            <div class="lana-info">
+              <p class="lana-cuenta" id="lana-cuenta" aria-live="polite">01 / 05</p>
+              <p class="lana-palabra" id="lana-palabra">Lana natural</p>
+              <p class="lana-frase" id="lana-frase">La materia prima. Fibras sueltas que dan origen al proceso.</p>
+              <ol class="lana-etapas" id="lana-etapas">
+                <li><button type="button" data-etapa="0">Lana natural</button></li>
+                <li><button type="button" data-etapa="1">Agua</button></li>
+                <li><button type="button" data-etapa="2">Jabón</button></li>
+                <li><button type="button" data-etapa="3">Amasado</button></li>
+                <li><button type="button" data-etapa="4">Fieltro</button></li>
+              </ol>
+              <div class="lana-ctrl">
+                <button type="button" id="lana-ant" aria-label="Etapa anterior">←</button>
+                <button type="button" id="lana-sig" aria-label="Etapa siguiente">→</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="ref-edicion" style="margin-top: 24px">Pendiente: origen de la lana, cuidado de los animales y respeto por el entorno natural. Se suma cuando esté la información confirmada.</p>
+
+      <div class="transicion" id="transicion">
+        <svg class="hilo" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+          <path id="hilo-camino" d="M0 70 C 120 20, 220 110, 340 64 S 560 18, 680 66 S 900 112, 1020 58 S 1150 30, 1200 52" fill="none"/>
+        </svg>
+        <p id="transicion-frase">De una técnica ancestral nace un lenguaje propio. La materia se transforma en <span class="t-palabra" data-palabra="paisaje">paisaje,</span> <span class="t-palabra" data-palabra="memoria">memoria</span> y <span class="t-palabra" data-palabra="expresión">expresión.</span></p>
+      </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <span>Alejandra Kovač</span>
-  </footer>
+  <!-- ═══ 04 · MI TIERRA ═══ -->
+  <section id="mi-tierra" class="seccion">
+    <div class="wrap">
+      <div class="cabecera revelar">
+        <p class="etiqueta">Colección</p>
+        <h2 class="titulo"><span class="linea script">Mi Tierra</span></h2>
+      </div>
+
+      <div class="tierra-grid revelar">
+        <div class="tarjeta">
+          <p class="destacado">La colección parte de los paisajes riojanos. La tierra, las montañas, los ríos y los amaneceres son el punto de partida para explorar el color, la forma y la textura.</p>
+        </div>
+        <div class="bloque-tierra">
+          <div class="prosa">
+            <p>Las obras no reproducen un paisaje de manera literal. Buscan transmitir su esencia: la fuerza de la tierra, el movimiento del agua, la transformación de la luz y las huellas que los lugares dejan en quienes los habitan.</p>
+            <p>Relieves, superposiciones y variaciones cromáticas evocan esa geografía tal como permanece en el recuerdo.</p>
+            <p>Cada pieza propone una experiencia visual y táctil que invita a la contemplación y a una conexión personal con la naturaleza.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="palabras revelar">
+        <p class="etiqueta">En palabras de la artista</p>
+        <span class="comilla" aria-hidden="true">“</span>
+        <blockquote class="cita" id="cita-artista">Busco que cada pieza conserve algo de los lugares que me habitan y, al mismo tiempo, permanezca abierta a quien la contempla. Que pueda despertar una emoción, un paisaje o una memoria propia, del mismo modo en que el arte despierta las mías.</blockquote>
+      </div>
+
+      <p style="text-align:center" class="revelar"><a class="boton boton-claro" href="#obras">Ver las obras</a></p>
+    </div>
+  </section>
+
+  <!-- ═══ 05 · OBRAS ═══ -->
+  <section id="obras" class="seccion">
+    <div class="wrap">
+      <div class="cabecera revelar">
+        <h2 class="titulo"><span class="linea"><span class="script">Obras</span></span></h2>
+      </div>
+      <div class="pestanas revelar" role="tablist" aria-label="Obras" id="obras-tabs">
+        <button type="button" role="tab" id="tab-textiles" aria-controls="panel-textiles" aria-selected="true">Obras textiles</button>
+        <button type="button" role="tab" id="tab-cuencos" aria-controls="panel-cuencos" aria-selected="false" tabindex="-1">Cuencos</button>
+      </div>
+      <!-- Se arman desde las listas OBRAS y CUENCOS (al final de la página). -->
+      <div id="panel-textiles" role="tabpanel" aria-labelledby="tab-textiles"><div id="galeria-obras"></div></div>
+      <div id="panel-cuencos" role="tabpanel" aria-labelledby="tab-cuencos" hidden><div id="galeria-cuencos"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══ 06 · TRAYECTORIA Y EXPOSICIONES ═══ -->
+  <section id="trayectoria" class="seccion">
+    <div class="wrap">
+      <div class="cabecera revelar">
+        <h2 class="titulo"><span class="linea">Trayectoria <span class="script">y</span></span><span class="linea">Exposiciones</span></h2>
+      </div>
+
+      <div class="subcabecera revelar"><p class="etiqueta">Exposiciones y participaciones</p></div>
+      <!-- Se arma desde la lista TRAYECTORIA. -->
+      <div class="expos" id="expos"></div>
+
+      <div class="espacios" id="proyectos">
+        <div class="subcabecera revelar">
+          <p class="etiqueta">Proyectos y encargos</p>
+          <h3 class="subtitulo" style="max-width: 24ch">Obras únicas, pensadas para dialogar con cada espacio.</h3>
+        </div>
+
+        <div class="proyectos revelar">
+          <figure class="foto proy-a"><img src="img/proyectos-vidriera.jpg" alt="Dos obras de fieltro crudo suspendidas en una vidriera" data-ampliar></figure>
+          <div class="tarjeta proy-texto">
+            <div class="prosa">
+              <p class="destacado">Cada pieza se desarrolla de manera única, respetando el proceso, la materialidad y la identidad artística de cada obra.</p>
+            </div>
+          </div>
+          <figure class="foto proy-b"><img src="img/proyectos-montaje.jpg" alt="Montaje de piezas de fieltro suspendidas en un local" data-ampliar></figure>
+          <div class="bloque-tierra proy-texto2 proy-info">
+            <div class="servicios">
+              <p class="etiqueta">Para arquitectos e interioristas</p>
+              <h4 class="subtitulo">Servicios</h4>
+              <ol class="servicios-lista">
+                <li>
+                  <h5 class="srv-cab"><button type="button" class="srv-boton" id="srv-b01" aria-expanded="false" aria-controls="srv-p01"><span class="srv-n">01</span><span class="srv-t">Desarrollo de obras a medida</span><span class="srv-signo" aria-hidden="true"></span></button></h5>
+                  <div class="srv-panel" id="srv-p01" role="region" aria-labelledby="srv-b01" hidden><div class="srv-cuerpo"><p>Cada proyecto comienza con un primer encuentro para conocer el espacio, su atmósfera y las ideas que motivan el encargo.</p><p>A partir de ese primer intercambio, se realiza una lectura curatorial del ambiente, considerando su arquitectura, dimensiones y las posibilidades de integración de la obra.</p><p>Este proceso permite establecer un punto de partida para desarrollar una propuesta artística que dialogue con el espacio y conserve la identidad del trabajo de Alejandra Kovač.</p></div></div>
+                </li>
+                <li>
+                  <h5 class="srv-cab"><button type="button" class="srv-boton" id="srv-b02" aria-expanded="false" aria-controls="srv-p02"><span class="srv-n">02</span><span class="srv-t">Diseño exclusivo para proyectos especiales</span><span class="srv-signo" aria-hidden="true"></span></button></h5>
+                  <div class="srv-panel" id="srv-p02" role="region" aria-labelledby="srv-b02" hidden><div class="srv-cuerpo"><p>Se desarrollan obras textiles para proyectos residenciales, comerciales, arquitectónicos y de interiorismo.</p></div></div>
+                </li>
+                <li>
+                  <h5 class="srv-cab"><button type="button" class="srv-boton" id="srv-b03" aria-expanded="false" aria-controls="srv-p03"><span class="srv-n">03</span><span class="srv-t">Visualización previa de la obra en el espacio</span><span class="srv-signo" aria-hidden="true"></span></button></h5>
+                  <div class="srv-panel" id="srv-p03" role="region" aria-labelledby="srv-b03" hidden><div class="srv-cuerpo"><p>Como parte del desarrollo del proyecto, se pueden realizar simulaciones visuales que permitan anticipar cómo se integrará la obra en el ambiente.</p><p>Estas representaciones ayudan a evaluar su escala, ubicación y relación con la arquitectura, facilitando el intercambio de ideas antes de avanzar con su realización.</p></div></div>
+                </li>
+                <li>
+                  <h5 class="srv-cab"><button type="button" class="srv-boton" id="srv-b04" aria-expanded="false" aria-controls="srv-p04"><span class="srv-n">04</span><span class="srv-t">Coordinación estética y cromática</span><span class="srv-signo" aria-hidden="true"></span></button></h5>
+                  <div class="srv-panel" id="srv-p04" role="region" aria-labelledby="srv-b04" hidden><div class="srv-cuerpo"><p>Alejandra desarrolla una interpretación artística propia, explorando las posibilidades expresivas de la lana, el color, las texturas y la composición.</p><p>Desde su conocimiento de las técnicas textiles, la artista transforma esa búsqueda conceptual en una propuesta visual y material, conservando siempre la identidad de su lenguaje artístico.</p></div></div>
+                </li>
+                <li>
+                  <h5 class="srv-cab"><button type="button" class="srv-boton" id="srv-b05" aria-expanded="false" aria-controls="srv-p05"><span class="srv-n">05</span><span class="srv-t">Proyectos en todo el país</span><span class="srv-signo" aria-hidden="true"></span></button></h5>
+                  <div class="srv-panel" id="srv-p05" role="region" aria-labelledby="srv-b05" hidden><div class="srv-cuerpo"><p>Trabajamos con arquitectos, interioristas y clientes de diferentes puntos de Argentina, desarrollando propuestas artísticas adaptadas a cada proyecto.</p><p>La distancia no es una limitación: mediante reuniones virtuales, intercambio de referencias y seguimiento del proceso, es posible acompañar cada etapa, desde la idea inicial hasta la realización y coordinación del envío de la obra.</p></div></div>
+                </li>
+              </ol>
+            </div>
+            <div class="montaje">
+              <p class="etiqueta">Detalles técnicos</p>
+              <h4 class="subtitulo">Montaje</h4>
+              <div class="montaje-opciones" role="group" aria-label="Tipos de montaje">
+                <button type="button" aria-pressed="true" data-montaje="sola">Pieza sola</button>
+                <button type="button" aria-pressed="false" data-montaje="marco">Marco</button>
+                <button type="button" aria-pressed="false" data-montaje="contramarco">Contramarco</button>
+              </div>
+              <div class="montaje-escena" aria-hidden="true">
+                <svg viewBox="0 0 160 120" class="montaje-dibujo" data-modo="sola">
+                  <line class="m-pared" x1="6" y1="112" x2="154" y2="112" pathLength="1"/>
+                  <g class="m-capa m-sola"><line x1="40" y1="24" x2="120" y2="24" pathLength="1"/><line x1="80" y1="8" x2="64" y2="24" pathLength="1"/><line x1="80" y1="8" x2="96" y2="24" pathLength="1"/></g>
+                  <g class="m-capa m-contramarco"><rect x="18" y="6" width="124" height="104" rx="1" pathLength="1"/></g>
+                  <g class="m-capa m-marco"><rect x="30" y="16" width="100" height="88" rx="1" pathLength="1"/></g>
+                  <path class="m-pieza" d="M46 30 C 60 26, 100 34, 114 29 C 117 50, 112 70, 116 92 C 98 96, 64 89, 44 94 C 47 72, 42 52, 46 30 Z" pathLength="1"/>
+                </svg>
+              </div>
+              <p class="montaje-nota" id="montaje-nota" aria-live="polite">La obra se presenta suelta, colgada directamente sobre el muro.</p>
+              <dl class="montaje-datos">
+                <div><dt>Peso</dt><dd>Liviano · apto para cualquier muro</dd></div>
+              </dl>
+            </div>
+          </div>
+          <figure class="foto proy-c"><img src="img/proyectos-mirada.jpg" alt="Alejandra Kovač observando sus obras de fieltro suspendidas" data-ampliar></figure>
+        </div>
+
+        <div class="proy-cta revelar">
+          <h4 class="subtitulo" style="max-width: 26ch">Cada espacio puede ser el punto de partida de una nueva obra.</h4>
+          <p>Podemos conversar sobre sus posibilidades.</p>
+          <div class="escribir" id="escribir">
+            <button type="button" class="boton boton-claro" id="escribir-btn" aria-expanded="false" aria-controls="escribir-menu">Consultas y proyectos</button>
+            <div class="escribir-menu" id="escribir-menu" hidden>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kovac.studio@gmail.com&amp;su=Consulta%20desde%20el%20portfolio" target="_blank" rel="noopener">Escribir desde Gmail</a>
+              <a href="https://outlook.live.com/mail/0/deeplink/compose?to=kovac.studio@gmail.com&amp;subject=Consulta%20desde%20el%20portfolio" target="_blank" rel="noopener">Escribir desde Outlook</a>
+              <a href="mailto:kovac.studio@gmail.com?subject=Consulta%20desde%20el%20portfolio" target="_blank" rel="noopener">Abrir mi app de correo</a>
+              <button type="button" id="escribir-copiar">Copiar la dirección</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 07 · CONTACTO ═══ -->
+  <section id="contacto" class="seccion">
+    <div class="wrap">
+      <div class="bloque-tierra contacto revelar">
+        <h2 class="titulo"><span class="linea">Contacto <span class="script">y</span></span><span class="linea">colaboraciones</span></h2>
+        <div class="prosa"><p>Para consultar por obras disponibles, proyectos a medida o exposiciones, podés escribirle directamente.</p></div>
+        <dl class="canales" id="canales"></dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap" lang="es"><footer>© 2026 Alejandra Kovač · Arte textil contemporáneo</footer></div>
+
+<div class="video-modal" id="video-modal" hidden role="dialog" aria-modal="true" aria-labelledby="video-modal-titulo" lang="es">
+  <div class="video-modal-fondo" data-cerrar-video></div>
+  <div class="video-modal-caja">
+    <div class="video-modal-cab">
+      <p class="etiqueta" id="video-modal-titulo">Proceso de la obra</p>
+      <button type="button" class="video-cerrar" data-cerrar-video aria-label="Cerrar video">Cerrar <span aria-hidden="true">✕</span></button>
+    </div>
+    <div class="video-marco">
+      <video id="video-proceso" controls playsinline preload="none"></video>
+      <p class="video-pendiente" id="video-pendiente" hidden>El video del proceso se incorporará próximamente.</p>
+    </div>
+  </div>
+</div>
+<div class="visor" id="visor" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Obra ampliada" lang="es">
+  <div class="visor-escena" id="visor-escena"><img id="visor-img" alt="" draggable="false"></div>
+  <div class="visor-barra">
+    <span class="visor-ayuda" id="visor-ayuda">Rueda, pellizco o doble clic para ampliar</span>
+    <div class="visor-botones">
+      <button type="button" id="visor-menos" aria-label="Alejar">−</button>
+      <button type="button" id="visor-mas" aria-label="Acercar">+</button>
+      <button type="button" id="visor-cerrar" aria-label="Cerrar">cerrar</button>
+    </div>
+  </div>
+</div>
+
+<div class="modo solo-edicion" id="modo" hidden>
+  <span id="modo-texto">Modo edición</span>
+  <button type="button" id="modo-boton">Ver versión pública</button>
+</div>
+<script src="js/main.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,68 @@
+ALEJANDRA KOVAČ · ARTE TEXTIL CONTEMPORÁNEO
+Sitio web listo para publicar
+==========================================
+
+QUÉ HAY EN ESTA CARPETA
+
+  index.html      La página. Es el archivo que el servidor muestra primero.
+  css/            estilos.css: colores, tipografías, tamaños, márgenes y animaciones.
+  js/             main.js: carruseles, visor de obras, acordeones, video, animación de la lana, etc.
+  img/            Las 44 fotografías, con sus archivos originales (sin recomprimir ni recortar).
+  video/          El video del proceso de Costa y su imagen de portada.
+
+No hace falta instalar nada: es HTML, CSS y JavaScript puros (no usa React ni
+ningún programa para "compilar"). Las tipografías (Playfair Display, Poppins y
+Pinyon Script) se cargan desde Google Fonts, por eso la página necesita internet
+para verse con las letras correctas.
+
+IMPORTANTE: no cambies los nombres de las carpetas ni de los archivos, y subí
+siempre la carpeta completa. Si falta una carpeta, faltan fotos o estilos.
+
+
+PROBARLA EN TU COMPUTADORA ANTES DE SUBIRLA
+
+  Opción rápida: abrí index.html con doble clic (Chrome, Safari, Firefox o Edge).
+  Se ve la página completa. El video de Costa puede no reproducirse así en
+  algunos navegadores; en el servidor funciona.
+
+  Opción exacta (como en internet), si tenés Python instalado:
+    1. Abrí la Terminal (Mac) o el Símbolo del sistema (Windows) en esta carpeta.
+    2. Escribí:  python3 -m http.server 8000      (en Windows: python -m http.server 8000)
+    3. Entrá en el navegador a  http://localhost:8000
+
+  Qué revisar: que se vean todas las fotos, que el botón "Ver más obras" funcione,
+  que las obras se amplíen al hacer clic, que se abra el video de Costa y que en
+  el celular (o achicando la ventana) todo se acomode bien.
+
+
+SUBIRLA A INTERNET
+
+  A) Con un hosting tradicional (Hostinger, DonWeb, Ferozo, cPanel, etc.)
+     1. Entrá al "Administrador de archivos" del hosting.
+     2. Abrí la carpeta pública del sitio (suele llamarse public_html o www).
+     3. Subí TODO el contenido de esta carpeta (index.html, css, js, img, video)
+        directamente ahí, sin meterlo dentro de otra carpeta.
+        Si el hosting permite subir un .zip y "Extraer", es lo más rápido.
+     4. Entrá a tu dominio (por ejemplo www.alejandrakovac.com) y revisá.
+
+  B) Gratis y sin hosting: Netlify (netlify.com)
+     1. Creá una cuenta.
+     2. Entrá a "Sites" y arrastrá esta carpeta completa a la zona que dice
+        "Drag and drop your site output folder here".
+     3. En segundos te da una dirección pública. Después podés conectar un
+        dominio propio desde "Domain settings".
+
+  C) Otras opciones gratuitas parecidas: Vercel, Cloudflare Pages o GitHub Pages.
+
+
+PARA CUANDO TENGAS DOMINIO PROPIO (opcional)
+
+  Para que al compartir el link por WhatsApp o redes aparezca una foto, agregá
+  en index.html, debajo de la línea  <meta property="og:type" ...> , esta línea
+  (cambiando el dominio por el tuyo):
+
+    <meta property="og:image" content="https://TU-DOMINIO.com/img/obra-tajamar.jpg">
+
+
+CONTACTO DEL SITIO
+  Correo: kovac.studio@gmail.com · Instagram: @alekovac
